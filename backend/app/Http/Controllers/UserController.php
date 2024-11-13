@@ -41,6 +41,8 @@ class UserController extends Controller
             'email' => $request->email,
             'password' =>  bcrypt($request->password)
         ]);
+
+        return redirect()->route('login')->with('success', 'Registration successful!');
     }
 
     /**
